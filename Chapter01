@@ -1,0 +1,109 @@
+# IT-566 — Chapter 1 Notes  
+Baseline Development Environment  
+Version: GitHub-Ready Markdown
+
+---
+
+## 1. Scope and Function
+Defines the minimum technical environment required for reproducible scripting work. Ensures consistent execution across all student machines. Prevents configuration drift and dependency conflicts. Establishes the technical baseline that all later chapters rely on.
+
+---
+
+## 2. Core Toolchain
+
+### 2.1 Git
+- Distributed version control system.
+- Tracks file changes over time.
+- Enables branching, merging, rollback, and structured project history.
+
+### 2.2 GitHub
+- Remote repository hosting platform.
+- Stores all coursework and provides the authoritative project copy.
+- Supports pull requests, issues, commits, and instructor review.
+
+### 2.3 GitHub Desktop
+- GUI tool for interacting with Git repositories.
+- Simplifies staging, committing, pushing, and pulling.
+- Useful for visualizing history and resolving conflicts.
+
+### 2.4 GitHub CLI (`gh`)
+Essential commands:
+```bash
+gh auth login
+gh repo create
+gh repo clone
+gh pr create
+Used for command-line repository management.
+Enables automation and standardized workflows.
+2.5 Visual Studio Code (VS Code)
+Primary IDE used in this course.
+Integrated terminal, debugging, Python support, and extension ecosystem.
+Supports workspace-level configuration for consistent formatting.
+3. Required VS Code Extensions
+3.1 GitHub Extensions
+GitHub Pull Requests & Issues
+GitHub Repositories
+GitHub Theme
+GitHub Codespaces (optional)
+3.2 Python Extensions
+Python (Microsoft)
+Pylance
+Black Formatter
+isort
+3.3 Additional Helpful Extensions
+Markdown PDF
+YAML
+JSON
+Jinja
+Remote Development (optional)
+4. Python Environment Setup
+4.1 Create a Virtual Environment
+python3 -m venv myvenv
+4.2 Activate the Environment
+Mac/Linux:
+source myvenv/bin/activate
+Windows:
+myvenv\Scripts\activate
+4.3 Install pipx
+python3 -m pip install pipx
+pipx ensurepath
+Purpose: isolates CLI tools from project dependencies.
+5. Formatting and Code Consistency
+5.1 Black (Auto-Formatter)
+black .
+5.2 isort (Import Sorter)
+isort .
+Both tools enforce deterministic formatting, eliminate style drift, and maintain consistent codebases across student submissions.
+6. Recommended Repository Structure
+project/
+│
+├── src/            # Primary code modules and scripts
+├── tests/          # Unit tests (introduced in later chapters)
+├── data/           # JSON, CSV, configuration inputs
+├── logs/           # Optional logging output
+│
+├── README.md       # Project documentation
+├── pyproject.toml  # Formatter configuration (Black, isort)
+└── .vscode/        # Workspace settings for VS Code
+Rationale: improves maintainability, isolates functions, and supports scaling into later coursework.
+7. GitHub Workflow Requirements
+7.1 Commit Discipline
+Commit frequently and incrementally.
+Each commit should represent one logical change.
+Write descriptive commit messages.
+7.2 Branching Strategy
+main — stable, production-ready branch; used for grading.
+feature/<task> — per-task development branches.
+Pull requests merge work into main.
+7.3 Submission Expectations
+Push changes regularly; GitHub history is part of grading.
+Avoid end-of-week bulk commits.
+Maintain clean and readable version history.
+8. Importance of Chapter 1
+This chapter defines:
+The mandatory development environment
+The required toolchain
+The formatting and configuration standards
+The repository structure used throughout the course
+The Git/GitHub workflow required for all submissions
+All future chapters and project components assume full compliance with this baseline setup.
